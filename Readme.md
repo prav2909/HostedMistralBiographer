@@ -73,12 +73,11 @@ This repository provides a chatbot application built using the Mistral language 
 * Use the toggle option to enable or disable RAG.
 * Click the "Submit" button to send your query and receive a response.
 
+**Sample Interface:**
+
+![Sample Interface](sample.png)
+
 ## Performance Notes
 
 * The chatbot's response time may be slow, particularly on systems with limited computational resources.
-* This slowness is attributed to the computational demands of the Mistral model and potential lack of model optimization.
-* Future improvements may include exploring smaller, more optimized models to enhance performance.
-
-## Future Improvements
-
-* Deploy on AWS EC2
+* This sl
