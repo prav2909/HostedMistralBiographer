@@ -1,0 +1,15 @@
+torch
+torchvision
+transformers
+charset-normalizer==3.4.1
+llama-index
+llama-index-embeddings-huggingface
+peft
+auto-gptq
+optimum
+bitsandbytes
+Flask
+hf_xet
+uvicorn
+fastapi
+fastapi[standard]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query with RAG</title>
+</head>
+<body>
+    <h2>Enter your query:</h2>
+    <form id="query-form">
+        <textarea name="input_text" rows="4" cols="50"></textarea><br><br>
+        <label>
+            <input type="checkbox" id="use_rag" checked> Use RAG
+        </label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Response:</h3>
+    <pre id="response"></pre>
+
+    <script>
+        document.getElementById("query-form").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const input_text = document.querySelector("textarea").value;
+            const use_rag = document.getElementById("use_rag").checked;
+
+            const response = await fetch("/process", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ input_text, use_rag })
+            });
+
+            const data = await response.json();
+            document.getElementById("response").textContent = data.result;
+        });
+    </script>
+</body>
+</html>
